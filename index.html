@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
     <title>Abdulrahim M. Lindongan | Executive Digital Profile</title>
     <meta name="description" content="Official digital business card for Abdulrahim M. Lindongan, CSE, SO2.">
     
@@ -16,71 +16,70 @@
 
     <style>
         :root {
-            --bg-primary: #050507;
-            --bg-card: rgba(18, 18, 22, 0.75);
-            --border-card: rgba(255, 255, 255, 0.08);
-            --border-glow: rgba(165, 28, 48, 0.4);
+            --bg-primary: #101827;
+            --bg-secondary: #172337;
+            --bg-card: #1C293B;
+            --accent-gold: #D6B978;
+            --accent-gold-muted: #B99B61;
+            --text-ivory: #F4F0E8;
+            --text-silver: #AAB4C2;
+            --border-color: rgba(255, 255, 255, 0.10);
+            --highlight: #24364B;
             
-            --accent-burgundy: #520910;
-            --accent-crimson: #901625;
-            --accent-gold-start: #FFE58F;
-            --accent-gold-end: #D4AF37;
-            
-            --text-white: #FFFFFF;
-            --text-gold: #E5C378;
-            --text-silver: #A1A1AA;
-            
-            --card-width: 440px;
+            --card-max-width: 460px;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
             background-color: var(--bg-primary);
-            color: var(--text-white);
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-ivory);
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             min-height: 100vh;
+            min-height: 100dvh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 24px 16px;
+            padding: max(20px, env(safe-area-inset-top)) 16px max(20px, env(safe-area-inset-bottom)) 16px;
             position: relative;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
             background-image: 
-                radial-gradient(circle at 50% 0%, rgba(144, 22, 37, 0.25) 0%, transparent 60%),
-                radial-gradient(circle at 85% 90%, rgba(212, 175, 55, 0.08) 0%, transparent 40%);
+                radial-gradient(circle at 50% -15%, var(--highlight) 0%, transparent 65%),
+                radial-gradient(circle at 90% 90%, rgba(214, 185, 120, 0.07) 0%, transparent 50%),
+                radial-gradient(circle at 10% 80%, var(--bg-secondary) 0%, transparent 60%);
         }
 
-        /* Ambient Glow Spheres */
+        /* Ambient Sophisticated Glow */
         .glow-sphere {
             position: absolute;
-            width: 300px;
-            height: 300px;
+            width: 340px;
+            height: 340px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(144, 22, 37, 0.3) 0%, transparent 70%);
-            filter: blur(50px);
+            background: radial-gradient(circle, rgba(214, 185, 120, 0.08) 0%, transparent 75%);
+            filter: blur(70px);
             z-index: 0;
             pointer-events: none;
         }
 
-        /* Main Glassmorphic Card Container */
+        /* Main Executive Card Container */
         .card-container {
             width: 100%;
-            max-width: var(--card-width);
+            max-width: var(--card-max-width);
             background: var(--bg-card);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--border-card);
-            border-radius: 28px;
-            padding: 40px 30px;
+            border: 1px solid var(--border-color);
+            border-radius: 32px;
+            padding: clamp(30px, 5vw, 42px) clamp(22px, 4vw, 34px);
             box-shadow: 
-                0 30px 60px rgba(0, 0, 0, 0.8),
-                0 0 40px rgba(144, 22, 37, 0.15),
-                inset 0 1px 1px rgba(255, 255, 255, 0.1);
+                0 30px 60px rgba(16, 24, 39, 0.9),
+                0 0 30px rgba(0, 0, 0, 0.5),
+                inset 0 1px 1px rgba(255, 255, 255, 0.12);
             position: relative;
             z-index: 1;
             overflow: hidden;
@@ -92,15 +91,15 @@
             to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
-        /* Metallic Top Accent Line */
+        /* Champagne Gold Top Accent Line */
         .card-container::before {
             content: '';
             position: absolute;
             top: 0;
-            left: 15%;
-            right: 15%;
+            left: 20%;
+            right: 20%;
             height: 2px;
-            background: linear-gradient(90deg, transparent, var(--accent-gold-start), var(--accent-crimson), transparent);
+            background: linear-gradient(90deg, transparent, var(--accent-gold), var(--accent-gold-muted), transparent);
         }
 
         /* Profile Header */
@@ -111,21 +110,21 @@
 
         .avatar-wrapper {
             position: relative;
-            width: 128px;
-            height: 128px;
-            margin: 0 auto 24px auto;
+            width: 132px;
+            height: 132px;
+            margin: 0 auto 22px auto;
         }
 
-        /* Rotating Animated Gold Halo */
-        .avatar-wrapper::after {
+        /* Elegant Champagne Gold Halo */
+        .avatar-wrapper::before {
             content: '';
             position: absolute;
-            top: -4px; left: -4px; right: -4px; bottom: -4px;
+            inset: -4px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent-gold-start), var(--accent-crimson), var(--accent-gold-end));
+            background: linear-gradient(135deg, var(--accent-gold), var(--highlight), var(--accent-gold-muted));
             z-index: -1;
-            opacity: 0.8;
-            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4));
+            opacity: 0.9;
+            box-shadow: 0 0 20px rgba(214, 185, 120, 0.25);
         }
 
         .avatar {
@@ -133,27 +132,25 @@
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #121216;
-            background-color: #1a1a1e;
+            border: 3px solid var(--bg-secondary);
+            background-color: var(--bg-secondary);
             -webkit-user-select: none;
             user-select: none;
             -webkit-touch-callout: none;
-            pointer-events: none;
-            transition: filter 0.2s ease-in-out;
+            transition: filter 0.25s ease;
         }
 
-        /* Dynamic Blur Class triggered on screenshot attempt */
         .avatar.blurred {
             filter: blur(25px) !important;
         }
 
         .name {
             font-family: 'Syne', sans-serif;
-            font-size: clamp(1.4rem, 5vw, 1.75rem);
+            font-size: clamp(1.45rem, 5vw, 1.85rem);
             font-weight: 800;
             letter-spacing: -0.5px;
             margin-bottom: 8px;
-            color: var(--text-white);
+            color: var(--text-ivory);
             text-transform: uppercase;
             line-height: 1.2;
         }
@@ -161,31 +158,58 @@
         .credentials-badge {
             display: inline-block;
             font-family: 'Syne', sans-serif;
-            font-size: 0.78rem;
+            font-size: 0.8rem;
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: var(--text-gold);
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(144, 22, 37, 0.2));
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            padding: 5px 14px;
+            color: var(--accent-gold);
+            background: rgba(214, 185, 120, 0.08);
+            border: 1px solid rgba(214, 185, 120, 0.25);
+            padding: 6px 16px;
             border-radius: 20px;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
-        .professions-list {
-            list-style: none;
+        /* Qualifications Cards Container */
+        .qualifications-list {
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 8px;
             margin-bottom: 16px;
+            text-align: left;
         }
 
-        .professions-list li {
-            font-size: 0.92rem;
+        .qualification-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-color);
+            padding: 11px 14px;
+            border-radius: 14px;
+            font-size: 0.88rem;
             color: var(--text-silver);
-            font-weight: 400;
-            line-height: 1.4;
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .qualification-item:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(214, 185, 120, 0.3);
+        }
+
+        .qualification-item i {
+            color: var(--accent-gold);
+            font-size: 0.95rem;
+            width: 20px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .qualification-item span {
+            color: var(--text-ivory);
+            font-weight: 500;
+            line-height: 1.35;
         }
 
         .location {
@@ -195,17 +219,18 @@
             align-items: center;
             justify-content: center;
             gap: 6px;
-            opacity: 0.85;
+            opacity: 0.9;
+            margin-top: 14px;
         }
 
         .location i {
-            color: var(--accent-gold-end);
+            color: var(--accent-gold);
         }
 
         .divider {
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            margin: 24px 0;
+            background: var(--border-color);
+            margin: 22px 0;
         }
 
         /* Action Buttons */
@@ -220,53 +245,57 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
             width: 100%;
-            padding: 14px 20px;
+            min-height: 52px;
+            padding: 14px 22px;
             border-radius: 14px;
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 0.95rem;
             font-weight: 600;
             text-decoration: none;
             cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
             border: 1px solid transparent;
             position: relative;
             overflow: hidden;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #FFE58F 0%, #D4AF37 50%, #901625 100%);
-            color: #000000;
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-muted));
+            color: var(--bg-primary);
             font-weight: 700;
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.25);
+            box-shadow: 0 6px 20px rgba(214, 185, 120, 0.25);
             border: none;
         }
 
-        .btn-primary:hover {
+        .btn-primary:hover, .btn-primary:active {
             transform: translateY(-2px);
-            box-shadow: 0 10px 28px rgba(212, 175, 55, 0.4);
-            filter: brightness(1.08);
+            box-shadow: 0 10px 28px rgba(214, 185, 120, 0.4);
+            filter: brightness(1.05);
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.03);
-            color: var(--text-white);
-            border-color: rgba(255, 255, 255, 0.08);
+            background: var(--bg-secondary);
+            color: var(--text-ivory);
+            border-color: var(--border-color);
         }
 
-        .btn-secondary:hover {
-            background: rgba(144, 22, 37, 0.2);
-            border-color: rgba(144, 22, 37, 0.5);
-            color: var(--text-white);
+        .btn-secondary:hover, .btn-secondary:active {
+            background: var(--highlight);
+            border-color: rgba(214, 185, 120, 0.4);
+            color: var(--text-ivory);
             transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
         .btn-logo {
             width: 28px;
             height: 28px;
             object-fit: contain;
-            border-radius: 4px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.06);
+            padding: 2px;
         }
 
         /* External Web Apps Section */
@@ -286,61 +315,63 @@
         .social-title {
             font-family: 'Syne', sans-serif;
             font-size: 0.8rem;
-            color: var(--text-gold);
+            color: var(--accent-gold);
             letter-spacing: 2px;
             text-transform: uppercase;
             margin-bottom: 16px;
+            font-weight: 700;
         }
 
         .social-grid {
             display: flex;
             justify-content: center;
-            gap: 14px;
+            gap: 16px;
         }
 
         .social-icon-btn {
-            width: 48px;
-            height: 48px;
+            width: 52px;
+            height: 52px;
             border-radius: 14px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            color: var(--text-white);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-ivory);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             text-decoration: none;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .social-icon-btn:hover {
-            background: linear-gradient(135deg, var(--accent-burgundy), var(--accent-crimson));
-            border-color: var(--accent-gold-end);
-            color: var(--text-white);
+        .social-icon-btn:hover, .social-icon-btn:active {
+            background: var(--highlight);
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
             transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 20px rgba(144, 22, 37, 0.4);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
         }
 
-        /* Optional About Me Section */
+        /* Executive About Me Section */
         .about-section {
-            background: rgba(0, 0, 0, 0.25);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
             border-radius: 16px;
-            padding: 18px;
+            padding: 20px;
             margin-bottom: 24px;
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             color: var(--text-silver);
-            line-height: 1.6;
+            line-height: 1.65;
             text-align: center;
         }
 
         .about-title {
             font-family: 'Syne', sans-serif;
-            font-size: 0.8rem;
-            color: var(--text-white);
-            letter-spacing: 1.5px;
+            font-size: 0.82rem;
+            color: var(--accent-gold);
+            letter-spacing: 2px;
             margin-bottom: 8px;
             text-transform: uppercase;
+            font-weight: 700;
         }
 
         /* Footer Branding */
@@ -348,21 +379,19 @@
             text-align: center;
             font-size: 0.75rem;
             color: var(--text-silver);
-            opacity: 0.5;
-            letter-spacing: 1px;
+            opacity: 0.6;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
+            font-weight: 600;
         }
 
         /* Redirect Modal Popup */
         .redirect-modal-overlay {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(5, 5, 7, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            inset: 0;
+            background: rgba(16, 24, 39, 0.88);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
             z-index: 10000;
             display: flex;
             align-items: center;
@@ -379,18 +408,18 @@
         }
 
         .redirect-modal-card {
-            background: rgba(18, 18, 22, 0.95);
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            background: var(--bg-card);
+            border: 1px solid rgba(214, 185, 120, 0.35);
             box-shadow: 
-                0 25px 50px rgba(0, 0, 0, 0.9),
-                0 0 35px rgba(144, 22, 37, 0.3);
-            border-radius: 24px;
-            padding: 32px 24px;
+                0 30px 60px rgba(0, 0, 0, 0.8),
+                0 0 35px rgba(16, 24, 39, 0.9);
+            border-radius: 26px;
+            padding: 36px 28px;
             width: 100%;
-            max-width: 360px;
+            max-width: 380px;
             text-align: center;
             position: relative;
-            transform: scale(0.9) translateY(20px);
+            transform: scale(0.92) translateY(20px);
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -406,23 +435,23 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(0, 0, 0, 0.4);
-            border-radius: 22px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: inset 0 0 15px rgba(0,0,0,0.5), 0 8px 25px rgba(0, 0, 0, 0.5);
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
         }
 
         .redirect-logo-img {
-            max-width: 85px;
-            max-height: 85px;
+            max-width: 80px;
+            max-height: 80px;
             object-fit: contain;
         }
 
         .redirect-title {
             font-family: 'Syne', sans-serif;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 700;
-            color: var(--text-white);
+            color: var(--text-ivory);
             margin-bottom: 6px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -431,15 +460,14 @@
         .redirect-subtitle {
             font-size: 0.85rem;
             color: var(--text-silver);
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
-        /* Spinner / Loader animation */
         .redirect-spinner {
-            width: 32px;
-            height: 32px;
-            border: 3px solid rgba(212, 175, 55, 0.2);
-            border-top: 3px solid var(--accent-gold-end);
+            width: 36px;
+            height: 36px;
+            border: 3px solid rgba(214, 185, 120, 0.2);
+            border-top: 3px solid var(--accent-gold);
             border-radius: 50%;
             margin: 0 auto 12px auto;
             animation: spin 0.8s linear infinite;
@@ -452,9 +480,10 @@
 
         .redirect-timer-text {
             font-size: 0.78rem;
-            color: var(--text-gold);
-            letter-spacing: 1px;
+            color: var(--accent-gold);
+            letter-spacing: 1.5px;
             text-transform: uppercase;
+            font-weight: 600;
         }
 
         /* Security Warning Toast Notification */
@@ -463,14 +492,14 @@
             bottom: 30px;
             left: 50%;
             transform: translateX(-50%) translateY(100px);
-            background: rgba(82, 9, 16, 0.95);
-            border: 1px solid var(--accent-gold-end);
-            color: var(--text-white);
+            background: var(--bg-secondary);
+            border: 1px solid var(--accent-gold);
+            color: var(--text-ivory);
             padding: 14px 24px;
             border-radius: 14px;
             font-size: 0.9rem;
             font-weight: 600;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 20px rgba(144, 22, 37, 0.5);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
             z-index: 9999;
             opacity: 0;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -480,7 +509,7 @@
             -webkit-backdrop-filter: blur(10px);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .security-warning-toast.show {
@@ -503,7 +532,7 @@
 
     <!-- Security Warning Notification Banner -->
     <div id="securityWarning" class="security-warning-toast">
-        <i class="fa-solid fa-triangle-exclamation" style="color: var(--accent-gold-end); font-size: 1.1rem;"></i>
+        <i class="fa-solid fa-triangle-exclamation" style="color: var(--accent-gold); font-size: 1.1rem;"></i>
         <span>Saving images and taking screenshots are prohibited on this profile.</span>
     </div>
 
@@ -525,18 +554,28 @@
         <!-- Profile Header -->
         <div class="profile-header">
             <div class="avatar-wrapper">
-                <!-- Profile photo set to profile.jpg -->
-                <img id="profileImage" src="profile.jpg" alt="Abdulrahim M. Lindongan" class="avatar" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'128\' height=\'128\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%23D4AF37\' stroke-width=\'1.5\'><circle cx=\'12\' cy=\'8\' r=\'4\'/><path d=\'M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2\'/></svg>'">
+                <!-- Profile photo profile.jpg -->
+                <img id="profileImage" src="profile.jpg" alt="Abdulrahim M. Lindongan" class="avatar" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'132\' height=\'132\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%23D6B978\' stroke-width=\'1.5\'><circle cx=\'12\' cy=\'8\' r=\'4\'/><path d=\'M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2\'/></svg>'">
             </div>
             
             <h1 id="fullName" class="name">Abdulrahim M. Lindongan</h1>
             <div id="credentialBadges" class="credentials-badge">CSE, SO2</div>
             
-            <ul id="professionsList" class="professions-list">
-                <li>Undergrad Bachelor of Science in Civil Engineering</li>
-                <li>Civil Service Professional Level Passer</li>
-                <li>Qualified Safety Officer 2</li>
-            </ul>
+            <!-- Structured Qualifications Grid -->
+            <div id="professionsList" class="qualifications-list">
+                <div class="qualification-item">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>Undergrad Bachelor of Science in Civil Engineering</span>
+                </div>
+                <div class="qualification-item">
+                    <i class="fa-solid fa-award"></i>
+                    <span>Civil Service Professional Level Passer</span>
+                </div>
+                <div class="qualification-item">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Qualified Safety Officer 2</span>
+                </div>
+            </div>
 
             <div id="locationWrapper" class="location">
                 <i class="fa-solid fa-location-dot"></i>
@@ -546,7 +585,7 @@
 
         <div class="divider"></div>
 
-        <!-- Optional About Me Section -->
+        <!-- Optional Executive Profile / About Me Section -->
         <div id="aboutSection" class="about-section">
             <div class="about-title">Executive Profile</div>
             <p id="aboutText">Dedicated public service professional, safety officer, and civil engineering undergraduate committed to technical excellence, safety standards, and community leadership.</p>
@@ -584,7 +623,6 @@
             </div>
         </div>
 
-        <!-- Separator below the 3 logos -->
         <div class="divider"></div>
 
         <!-- External Apps Section -->
@@ -623,9 +661,9 @@
             lastName: "M. Lindongan",
             suffix: "CSE, SO2",
             professions: [
-                "Undergrad Bachelor of Science in Civil Engineering",
-                "Civil Service Professional Level Passer",
-                "Qualified Safety Officer 2"
+                { text: "Undergrad Bachelor of Science in Civil Engineering", icon: "fa-solid fa-graduation-cap" },
+                { text: "Civil Service Professional Level Passer", icon: "fa-solid fa-award" },
+                { text: "Qualified Safety Officer 2", icon: "fa-solid fa-shield-halved" }
             ],
             location: "Lomidong, Marawi City",
             email: "abdulrahimlindongan03@gmail.com",
@@ -652,9 +690,14 @@
             document.getElementById("fullName").textContent = `${profileData.firstName} ${profileData.lastName}`;
             document.getElementById("credentialBadges").textContent = profileData.suffix;
 
-            // Populate Professions List
+            // Populate Qualifications List
             const profListEl = document.getElementById("professionsList");
-            profListEl.innerHTML = profileData.professions.map(prof => `<li>${prof}</li>`).join('');
+            profListEl.innerHTML = profileData.professions.map(item => `
+                <div class="qualification-item">
+                    <i class="${item.icon}"></i>
+                    <span>${item.text}</span>
+                </div>
+            `).join('');
 
             // Populate Location
             document.getElementById("locationText").textContent = profileData.location;
@@ -719,10 +762,10 @@
 
             modal.classList.add("active");
 
-            // Redirect after 1.5 seconds
+            // Redirect after 1.2 seconds
             setTimeout(() => {
                 window.location.href = targetUrl;
-            }, 1500);
+            }, 1200);
         }
 
         function setupSocialLink(elementId, url) {
@@ -744,20 +787,19 @@
                 "VERSION:3.0",
                 `N:${profileData.lastName};${profileData.firstName};;;`,
                 `FN:${profileData.firstName} ${profileData.lastName}, ${profileData.suffix}`,
-                `TITLE:${profileData.professions[0]}`,
+                `TITLE:${profileData.professions[0].text}`,
                 `TEL;TYPE=CELL:${profileData.phone}`,
                 `EMAIL:${profileData.email}`,
                 `ADR;TYPE=WORK:;;${profileData.location};;;;`,
                 `NOTE:${profileData.aboutBio}`,
                 "END:VCARD"
-            ].join("\n");
+            ].join("\r\n");
 
             const blob = new Blob([vCardData], { type: "text/vcard;charset=utf-8;" });
             const url = URL.createObjectURL(blob);
             const link = document.createElement("a");
             link.href = url;
-            link.setAttribute("filename", `${profileData.firstName}_${profileData.lastName}.vcf`);
-            link.download = `${profileData.firstName}_${profileData.lastName}.vcf`;
+            link.setAttribute("download", `${profileData.firstName}_${profileData.lastName}.vcf`);
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
@@ -765,10 +807,9 @@
         }
 
         /* ==========================================================
-           SECURITY PROTECTION, BLUR & WARNING LOGIC
+           SECURITY PROTECTION & WARNING LOGIC
            ========================================================== */
         let warningTimeout;
-        let unblurTimeout;
 
         function triggerSecurityWarning(customMessage) {
             const toast = document.getElementById("securityWarning");
@@ -782,26 +823,14 @@
             clearTimeout(warningTimeout);
             warningTimeout = setTimeout(() => {
                 toast.classList.remove("show");
-            }, 3500);
+            }, 3000);
         }
 
-        function blurProfileImage(message) {
-            const img = document.getElementById("profileImage");
-            img.classList.add("blurred");
-            triggerSecurityWarning(message || "Taking screenshots is prohibited. Image has been blurred.");
-
-            // Automatically remove blur after 6 seconds if user returns or stops
-            clearTimeout(unblurTimeout);
-            unblurTimeout = setTimeout(() => {
-                img.classList.remove("blurred");
-            }, 6000);
-        }
-
-        // Prohibit right-clicking / context menu specifically on images and avatar wrappers
+        // Prohibit right-clicking / context menu specifically on images and avatar wrapper
         document.addEventListener("contextmenu", (e) => {
             if (e.target.tagName === "IMG" || e.target.closest(".avatar-wrapper")) {
                 e.preventDefault();
-                blurProfileImage("Saving images is prohibited on this profile.");
+                triggerSecurityWarning("Saving images is prohibited on this profile.");
             }
         });
 
@@ -809,7 +838,7 @@
         document.addEventListener("dragstart", (e) => {
             if (e.target.tagName === "IMG") {
                 e.preventDefault();
-                blurProfileImage("Image downloading is prohibited.");
+                triggerSecurityWarning("Image downloading is prohibited.");
             }
         });
 
@@ -817,28 +846,16 @@
         document.addEventListener("keydown", (e) => {
             if (e.key === "PrintScreen") {
                 e.preventDefault();
-                navigator.clipboard.writeText("Screenshot capture is disabled on this profile.");
-                blurProfileImage("Taking screenshots is prohibited on this profile.");
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText("Screenshot capture is disabled on this profile.");
+                }
+                triggerSecurityWarning("Taking screenshots is prohibited on this profile.");
             }
             
             if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S')) {
                 e.preventDefault();
-                blurProfileImage("Saving page content is prohibited.");
+                triggerSecurityWarning("Saving page content is prohibited.");
             }
-        });
-
-        // Detect when window loses focus (triggers when OS snipping tool overlays open)
-        window.addEventListener("blur", () => {
-            const img = document.getElementById("profileImage");
-            img.classList.add("blurred");
-        });
-
-        // Restore image when user focuses back on the tab
-        window.addEventListener("focus", () => {
-            setTimeout(() => {
-                const img = document.getElementById("profileImage");
-                img.classList.remove("blurred");
-            }, 800);
         });
     </script>
 </body>
